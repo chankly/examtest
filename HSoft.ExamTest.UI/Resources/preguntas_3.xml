@@ -1,0 +1,1843 @@
+<?xml version="1.0" encoding="utf-8"?>
+<questions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <question title="1-. What is the purpose of the restore-keys parameter in the GitHub Actions cache action?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>specify the location of the cached files</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>enable cross-OS cache functionality</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>indicate whether a cache hit occurred</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>provide alternative keys to use in case of a cache miss</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;&lt;code&gt;restore-keys&lt;/code&gt; allows you to specify a list of alternative restore keys. These keys are used sequentially in the order provided to find and restore a cache in case of a cache miss.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;The &lt;code&gt;path&lt;/code&gt; parameter is used to specify the location of cached files&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The &lt;code&gt;enableCrossOsArchive&lt;/code&gt; parameter is used for cross-OS cache functionality&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The &lt;code&gt;cache-hit&lt;/code&gt; output parameter is used to indicate whether a cache hit occurred&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows#managing-caches:~:text=restore%2Dkeys%3A%20Optional%20A%20string%20containing%20alternative%20restore%20keys%2C%20with%20each%20restore%20key%20placed%20on%20a%20new%20line.%20If%20no%20cache%20hit%20occurs%20for%20key%2C%20these%20restore%20keys%20are%20used%20sequentially%20in%20the%20order%20provided%20to%20find%20and%20restore%20a%20cache."&gt;https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows#managing-caches&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="2-. Which version of the actions/checkout action will be used for the following workflow configuration?" isCheck="false" imagePath="image_3_2.png">
+    <responses>
+      <response isValid="true">
+        <text>no version, - uses: actions/checkout is an invalid syntax</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>version 3</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>latest version of the action</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>default version of the action</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;To use a specific action version, users can configure their GitHub Actions workflow to target a tag, a commit's SHA, or a branch named for a release.&amp;nbsp; The &lt;code&gt;uses&lt;/code&gt; attribute must be a path, a Docker image, or owner/repo@ref.&amp;nbsp; If a version is not specified then the workflow will error:&lt;/p&gt;&lt;div class="ud-component--base-components--code-block"&gt;&lt;div&gt;&lt;pre class="prettyprint linenums prettyprinted" role="presentation" style=""&gt;&lt;ol class="linenums"&gt;&lt;li class="L0"&gt;&lt;span class="typ"&gt;Error&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="pun"&gt;.&lt;/span&gt;&lt;span class="pln"&gt;github&lt;/span&gt;&lt;span class="com"&gt;#L1&lt;/span&gt;&lt;/li&gt;&lt;li class="L1"&gt;&lt;span class="pln"&gt;the &lt;/span&gt;&lt;span class="str"&gt;`uses' attribute must be a path, a Docker image, or owner/repo@ref&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;******************&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;WRONG ANSWERS&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;In GitHub Actions, there is no default version for actions.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The part after the @ must be a valid Git ref (branch or tag name) or commit ID in the action repository. &lt;code&gt;actions/checkout@v3&lt;/code&gt; will simply use whichever commit the v3 tag or branch in the actions/checkout repository points at.&amp;nbsp; GitHub actions will not use the latest release by default, the version must be specified.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;There is no indicator in the example code that version 3 of the action should be used.&amp;nbsp; If the intent was to use version 3 of the action the code should read -&lt;code&gt; uses: actions/checkout@v3&lt;/code&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/creating-actions/about-custom-actions"&gt;https://docs.github.com/en/actions/creating-actions/about-custom-actions&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/learn-github-actions/finding-and-customizing-actions"&gt;https://docs.github.com/en/actions/learn-github-actions/finding-and-customizing-actions&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="3-. What are the benefits of using organization-templated workflows?  (select three)" isCheck="true" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>leverages AI</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>saves time</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>promotes consistency</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>promotes best practices</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;Organizations develop and provide templated workflows to help their organization build GitHub Actions workflows.&amp;nbsp; This not only saves time, it promotes consistency and best practices across your organization.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;******************&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;WRONG ANSWERS&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Leveraging AI is not typically a benefit of organization templated workflows. While automation and intelligence may enhance workflow capabilities in certain contexts, it's not directly related to the use of templated workflows within an organization.&lt;/p&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization"&gt;https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="4-. How long does GitHub store logs and artifacts by default?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>24 hours</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>90 days</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>indefinitely</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>1 year</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;By default, the artifacts and log files generated by workflows are retained for 90 days before they are automatically deleted. You can adjust the retention period depending on the type of repository:&lt;/p&gt;&lt;p&gt;&lt;strong&gt;******************&lt;br&gt;WRONG ANSWERS"&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;For public repositories: you can change this retention period to anywhere between 1 day and 90 days.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;For private repositories: you can change this retention period to anywhere between 1 day and 400 days.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;When you customize the retention period, it only applies to new artifacts and log files and does not retroactively apply to existing objects. For managed repositories and organizations, the maximum retention period cannot exceed the limit set by the managing organization or enterprise.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/managing-workflow-runs/downloading-workflow-artifacts"&gt;https://docs.github.com/en/actions/managing-workflow-runs/downloading-workflow-artifacts&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#configuring-the-retention-period-for-github-actions-artifacts-and-logs-in-your-repository"&gt;https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#configuring-the-retention-period-for-github-actions-artifacts-and-logs-in-your-repository&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="5-. You've developed a custom GitHub Action to automate a specific task in your organization's CI/CD pipeline. What is the recommended first step in creating comprehensive documentation for the action?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>design an interactive tutorial to guide users through the setup and usage of the action</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>develop a thorough README.md file containing a detailed description, input and output arguments, secrets, environment variables, and usage examples for the action</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>include a comprehensive troubleshooting guide to address potential issues users may encounter</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>create a detailed list of all the features and capabilities of the action</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;The &lt;code&gt;README.md&lt;/code&gt; file serves as the primary source of information for users to understand and utilize the GitHub Action. Including a detailed description, input and output arguments, secrets, environment variables, and usage examples in the &lt;code&gt;README.md&lt;/code&gt; file ensures comprehensive documentation that facilitates the action's adoption and usage by other teams.&lt;/p&gt;&lt;p&gt;*******************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;While listing features and capabilities is important, the &lt;code&gt;README.md&lt;/code&gt; file should focus on providing essential information for users to effectively use the action.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;While a troubleshooting guide is beneficial, it is not the initial step in creating comprehensive documentation. Troubleshooting information can be included as supplementary documentation.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;While an interactive tutorial can be helpful, it is not the first step in creating comprehensive documentation. Tutorials can complement the &lt;code&gt;README.md&lt;/code&gt; file to provide additional guidance for users.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/creating-actions/about-custom-actions#creating-a-readme-file-for-your-action"&gt;https://docs.github.com/en/actions/creating-actions/about-custom-actions#creating-a-readme-file-for-your-action&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="6-. You've developed a GitHub Action that automates the deployment process for your organization's web applications. You're thinking about distributing this action publicly or keeping it within your organization's private repositories. What factors might lead you to publish this action in a public repository?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>you aim to increase the visibility of your organization's brand and expertise in automated deployment practices</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>you want to foster collaboration and contribution from the broader GitHub community to enhance the features and functionality over time</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>you want to restrict access to the action only to authorized users within your organization, maintaining control over its usage and distribution</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>you need to integrate the action seamlessly with other public repositories and workflows across various organizations</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;Publishing the action in a public repository encourages collaboration and contribution from various developers and organizations. This can lead to valuable feedback, bug fixes, and feature enhancements, ultimately improving the action's effectiveness and usability.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;While increasing visibility might be a secondary benefit, the primary motivation for choosing a public repository is typically collaboration and contribution from the broader community.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Integrating with public repositories and workflows can be achieved even if the action is hosted in a private repository through proper access controls and token management.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Restricting access to authorized users is a valid consideration for sensitive actions, but it doesn't align with the decision to publish in a public repository, which is primarily driven by collaboration and community engagement.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/creating-actions/publishing-actions-in-github-marketplace"&gt;https://docs.github.com/en/actions/creating-actions/publishing-actions-in-github-marketplace&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="7-. What is the primary purpose of an automated release management strategy?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>discourage users from referencing named tags or shas</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>prioritize security by only committing dependencies to tagged release commits and performing builds during a release</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>encourage users to directly commit dependencies to the main branch</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>streamline the release process by committing dependencies to every branch</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;The described automated release management strategy diverges from other approaches by intentionally avoiding committing dependencies to the main branch. Instead, dependencies are only committed to tagged release commits. This practice aims to promote the referencing of named tags or shas by users and enhances security by conducting builds during a release.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;strategy does not encourage users to commit dependencies to the main branch.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;the strategy encourages users to reference named tags or shas, rather than discouraging them.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;committing dependencies to every branch would not align with the described strategy, which focuses on committing dependencies only to tagged release commits to enhance security.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/creating-actions/releasing-and-maintaining-actions#results"&gt;https://docs.github.com/en/actions/creating-actions/releasing-and-maintaining-actions#results&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="8-. Tom has built a workflow that sends requests to a service that is currently unavailable.  What is an appropriate action for Tom to take so that his workflow doesn't log errors until the service is restored?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>delete the workflow file</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>disable the workflow</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>modify the workflow file to skip the failing step</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>pause the workflow</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;The appropriate action for Tom to take so that his workflow doesn't log errors until the service is restored would be to disable the workflow. Disabling the workflow temporarily stops it from running, preventing any further requests to the down service and thus avoiding the generation of errors in the logs.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;******************&lt;br&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Deleting the workflow file would permanently remove the workflow configuration, which may not be desirable if Tom plans to re-enable the workflow once the service is restored. Therefore, disabling the workflow is the more suitable option in this scenario.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;GitHub Actions does not have a built-in "pause" functionality for workflows. Disabling the workflow effectively achieves the same outcome by preventing it from running.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;While it's possible to modify the workflow file to skip or conditionally execute certain steps based on conditions, it may not be ideal in this scenario. Modifying the workflow file to skip the failing step temporarily may require additional complexity and maintenance. Disabling the workflow provides a more straightforward solution to prevent errors until the service is restored.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/using-workflows/disabling-and-enabling-a-workflow"&gt;https://docs.github.com/en/actions/using-workflows/disabling-and-enabling-a-workflow&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="9-. When creating a new GitHub action, what are the valid names of the metadata file that can be used? (select two)" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="true">
+        <text>action.yml </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>workflow.yaml </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>action.yaml </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>job.yml </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;All actions require a metadata file. The metadata filename must be either &lt;code&gt;action.yml&lt;/code&gt; or &lt;code&gt;action.yaml&lt;/code&gt;. The data in the metadata file defines the inputs, outputs, and runs configuration for your action.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;While &lt;code&gt;workflow.yaml&lt;/code&gt; and &lt;code&gt;job.yml&lt;/code&gt; may be valid file names, they aren't valid for the metadata filename&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions"&gt;https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="10-. When a GitHub repository contains multiple custom actions, where is the recommended location to store the action files?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>actions with a single directory for all action files</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>workflows with separate workflow files defining each action</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>src with language-specific subdirectories for each action</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>.github/actions with separate subdirectories for each action</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;The recommended location to store action files when a GitHub repository contains multiple custom actions is within the &lt;code&gt;&lt;strong&gt;.github/actions&lt;/strong&gt;&lt;/code&gt; directory. Each action should have its own subdirectory within this directory to maintain organization and clarity.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Storing all action files within a single &lt;code&gt;&lt;strong&gt;actions&lt;/strong&gt;&lt;/code&gt; directory may lead to confusion and difficulty in managing multiple actions.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;While using a &lt;code&gt;&lt;strong&gt;src&lt;/strong&gt;&lt;/code&gt; directory with language-specific subdirectories may be a common practice, it is not the recommended location for storing custom actions in GitHub repositories.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Storing action files within the &lt;code&gt;&lt;strong&gt;workflows&lt;/strong&gt;&lt;/code&gt; directory is not appropriate, as this directory is typically used for storing workflow configuration files, not custom action files.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/creating-actions/about-custom-actions#:~:text=For%20example%2C%20.github/actions/action%2Da%20and%20.github/actions/action%2Db."&gt;https://docs.github.com/en/actions/creating-actions/about-custom-actions#:~:text=For%20example%2C%20.github/actions/action%2Da%20and%20.github/actions/action%2Db.&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="11-. Which statement accurately describes the accessibility of default environment variables?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>default environment variables are accessible through the env context in the workflow file</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>default environment variables are set by GitHub are are available at every step in a workflow</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>default environment variables are only accessible to steps explicitly requesting them</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>default environment variables are defined within the workflow and can be overwritten</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;Default environment variables are set by GitHub and are available at every step in a workflow. They provide information about the workflow run and repository.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Default environment variables are not accessed through the ‘env’ context; instead, they have corresponding context properties&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;GitHub sets default environment variables and cannot be overwritten during the workflow run&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Default environment variables are available to every step by default and do not require explicit requests&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables"&gt;https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="12-. You are collaborating with a colleague using their repository in GitHub, but you are having trouble adding a secret for a workflow. What action is required to resolve the issue?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>contact GitHub support to grant you the required permissions to add secrets to the repository</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>fork the repository to your personal account and add the secret to the forked repository</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>submit a pull request to the repository, including the secret addition in the changes, for your colleague to review and merge</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>request your colleague, who is the repository owner, to add the secret to the workflow</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;When collaborating on a personal account repository in GitHub, if you need to add a secret to a workflow but lack the necessary permissions because your colleague is the repository owner, the most appropriate action is to request your colleague to add the secret to the workflow. This approach ensures that the repository owner, who has the requisite permissions, can directly manage and add secrets to the repository, resolving the issue.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Contacting GitHub support is unnecessary and would likely not result in granting individual permissions for adding secrets to the repository.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Forking the repository would create a separate copy, but it does not directly address the issue of adding a secret to the original repository.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;While submitting a pull request is a common method for contributing changes, it may not be necessary for adding a secret, and it could be an indirect approach compared to directly requesting assistance from the repository owner.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository:~:text=To%20create%20secrets%20or%20variables%20on%20GitHub%20for%20a%20personal%20account%20repository%2C%20you%20must%20be%20the%20repository%20owner."&gt;https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="13-. What is the purpose of the workflow_dispatch event?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>initiates the workflow for pull requests</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>enables manual triggering of the workflow</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>runs the workflow on a predefined schedule</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>triggers the workflow when any branch is pushed</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;To run a workflow manually, the workflow must be configured to run on the &lt;code&gt;workflow_dispatch&lt;/code&gt; event. When a workflow is configured to run on the &lt;code&gt;workflow_dispatch&lt;/code&gt; event, you can run the workflow using the Actions tab on GitHub, GitHub CLI, or the REST API.&lt;/p&gt;&lt;p&gt;********************&lt;/p&gt;&lt;p&gt;&lt;strong&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;If you want to run a workflow on every push to a branch, you would typically use the &lt;code&gt;push&lt;/code&gt; event&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The &lt;code&gt;schedule&lt;/code&gt; event is used to run a workflow on a predefined schedule, not &lt;code&gt;workflow_dispatch&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;For workflows targeting pull requests, you would use the &lt;code&gt;pull request&lt;/code&gt; event. The &lt;code&gt;workflow_dispatch&lt;/code&gt; is separate and is designed for manual initiation rather than being specific to pull requests&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://github.blog/changelog/2020-07-06-github-actions-manual-triggers-with-workflow_dispatch/"&gt;https://github.blog/changelog/2020-07-06-github-actions-manual-triggers-with-workflow_dispatch/&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch"&gt;https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="14-. Dan would like Drew's input on a particular line in the logs of a recently run workflow.  What is an efficient way to provide Drew access to the line in the logs?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="true">
+        <text>click on the step's line number to get a link to the specific line and share the link with Drew</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>download the log archive and email to Drew</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>copy the relevant line from the logs and paste it into a new issue on the repository's issue tracker.</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>take a screenshot of the relevant portion of the logs and share it with Drew</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;To get a link to a specific line in the logs, click on the step's line number. You can then copy the link from the address bar of your web browser.&amp;nbsp; Sharing a direct link to the workflow run's logs allows Drew to access the specific line in the logs directly within the GitHub interface, providing a convenient and efficient way to review and provide input on the desired line.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;******************&lt;br&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;While creating an issue with the relevant line pasted into it is a valid option, it may not be the most efficient way to provide access to a specific line in the logs, especially if Drew needs to view the context surrounding the line or interact with other parts of the logs.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Downloading the log archive and emailing it to Drew as an attachment introduces additional steps and complexity, making it less convenient than sharing a direct link to the logs within the GitHub interface. It also requires Drew to download and open the file separately, which may be less user-friendly.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;While sharing a screenshot may provide a visual representation of the relevant line, it lacks the interactivity and context provided by accessing the logs directly within the GitHub interface. Additionally, screenshots may not capture the entire context or surrounding lines, making it more challenging for Drew to provide accurate input.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/using-workflow-run-logs"&gt;https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/using-workflow-run-logs&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="15-. What happens if a job marked as a dependency fails in a workflow with a dependent job?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="true">
+        <text>the entire workflow is marked as failed</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>only the dependent jobs is rerun</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>the dependent jobs is skipped, and subsequent jobs continue to run</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>all subsequent jobs continue to run</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;If a job marked as a dependency fails, the subsequent jobs are not executed, and the entire workflow is considered failed&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;All subsequent jobs do not continue to run when a dependency fails&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Only rerunning the department job does not capture the impact on subsequent jobs; the entire workflow is marked as failed&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Skipping the dependent jobs does not allow subsequent jobs to continue; the workflow terminates when a dependency fails&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow"&gt;https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="16-. You need to reference the value created by the step, as shown in the code below. What value should you use for the output?" isCheck="false" imagePath="image_3_16.png">
+    <responses>
+      <response isValid="true">
+        <text>steps.random-number-generator.outputs.random-id </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>outputs.random-id </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>random-number-generator.outputs.random-id </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>random-id </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;The value to reference the output created by the step should be &lt;code&gt;steps.random-number-generator.outputs.random-id&lt;/code&gt;.&lt;/p&gt;&lt;p&gt;This references the &lt;code&gt;random-id&lt;/code&gt; output from the &lt;code&gt;random-number-generator&lt;/code&gt; step, which is then used as the value for the &lt;code&gt;random-number&lt;/code&gt; output in the action's metadata.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;the other answers are incomplete to references the output created by the step. You need to reference it by using &lt;code&gt;steps.random-number-generator.outputs.random-id&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#outputsoutput_idvalue"&gt;https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#outputsoutput_idvalue&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="17-. What is the URL for the GitHub Container Registry?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="true">
+        <text>ghcr.io</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>github.com</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>github.com/container</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>docker.io</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;The URL for the GitHub Container Registry is &lt;code&gt;ghcr.io&lt;/code&gt;&amp;nbsp; This is where you can host, publish, and manage Docker container images using GitHub's infrastructure and authentication mechanisms.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;*******************&lt;br&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;github.com&lt;/code&gt; is the primary domain for GitHub, but it does not specifically refer to the GitHub Container Registry. The GitHub Container Registry has its own distinct URL - &lt;code&gt;ghcr.io&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;docker.io&lt;/code&gt; is the primary domain for Docker Hub, a popular container registry. However, the question is asking specifically about the GitHub Container Registry, so Docker Hub is not the correct answer.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;github.com/container &lt;/code&gt;is not associated with the GitHub Container Registry. GitHub does have various features related to containers, such as GitHub Packages and GitHub Container Registry which is accessible at ghcr.io&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/publishing-packages/publishing-docker-images#publishing-images-to-github-packages"&gt;https://docs.github.com/en/actions/publishing-packages/publishing-docker-images#publishing-images-to-github-packages&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="18-. Your development team is troubleshooting connectivity issues with a self-hosted runner. What parameter can be used to validate that a self-hosted runner can access all required network services on GitHub?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>--verify-connection </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>--diag  </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>--check </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>--validate-network </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;When troubleshooting connectivity issues with a self-hosted runner and validating its access to GitHub services, the development team must use the &lt;code&gt;--check&lt;/code&gt; feature alongside the runner's URL and authentication token. This combination allows them to diagnose and resolve any network connectivity issues efficiently, ensuring smooth workflow execution. By providing the necessary credentials, the team can validate that the self-hosted runner can access all required GitHub services effectively.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;--diag&lt;/code&gt;, &lt;code&gt;--validate-network&lt;/code&gt;, and &lt;code&gt;--verify-connection&lt;/code&gt; are not valid parameters for Github self-hosted runners&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/monitoring-and-troubleshooting-self-hosted-runners#checking-self-hosted-runner-network-connectivity"&gt;https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/monitoring-and-troubleshooting-self-hosted-runners#checking-self-hosted-runner-network-connectivity&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="19-. Which workflow command is commonly used to set an output variable that can be consumed by subsequent steps in a workflow?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="true">
+        <text>echo</text>
+        <explain>&lt;![CDATA[
+The 'echo' command is commonly used to display a message in the workflow log. It can also be used to set an output variable that can be consumed by subsequent steps in a workflow.
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>debug </text>
+        <explain>&lt;![CDATA[
+The 'debug' command is used to print debug messages to the workflow log. It is not commonly used to set output variables that can be consumed by subsequent steps in a workflow.
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>export</text>
+        <explain>&lt;![CDATA[
+The 'export' command is not typically used in GitHub Actions workflows to set output variables. It is more commonly used in shell scripts to define environment variables.
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>set </text>
+        <explain>&lt;![CDATA[
+The 'set' command is not a valid workflow command in GitHub Actions. It is not used to set output variables that can be consumed by subsequent steps in a workflow.
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;Actions can communicate with the runner machine to set environment variables, output values used by other actions, add debug messages to the output logs, and other tasks.&lt;/p&gt;&lt;p&gt;Most workflow commands use the &lt;code&gt;echo&lt;/code&gt; command in a specific format, while others are invoked by writing to a file.&lt;/p&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions"&gt;https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="20-. What distinguishes YAML syntax from JSON when configuring workflow jobs in GitHub Actions?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="true">
+        <text>YAML allows significant newlines and indentation</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>YAML allows the use of literal tab characters for indentation</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>YAML syntax is more concise compared to JSON</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>YAML does not permit the use of comments within the configuration file</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;YAML allows significant newlines and indentation, resembling Python, while JSON does not use indentation for structure.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;YAML, like JSON, requires spaces for indentation and prohibits the use of literal tab characters.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;YAML and JSON have similar verbosity, and YAML's conciseness is not a distinguishing factor.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Both YAML supports comments within the configuration files but JSON does not&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://learnxinyminutes.com/docs/yaml/"&gt;https://learnxinyminutes.com/docs/yaml/&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="21-. Which configuration is appropriate for triggering a workflow to run on webhook events related to check_run actions?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="true" imagePath="3_21_1.png">
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false" imagePath="3_21_2.png">
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false" imagePath="3_21_3.png">
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false" imagePath="3_21_4.png">
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;The &lt;code&gt;check_run&lt;/code&gt; event in GitHub triggers workflows when there are activities related to check runs, such as when a new check run is created or when an existing check run is completed.&lt;/p&gt;&lt;p&gt;In the provided example, option a) is correct because it specifies the types of events that should trigger the workflow, including both &lt;code&gt;created&lt;/code&gt; and &lt;code&gt;completed&lt;/code&gt;. This means the workflow will run when a new check run is created or when an existing check run is completed, which covers the desired scenarios for most check run workflows.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;the wrong answers either specify incorrect event types or incomplete combinations that do not cover all relevant scenarios for check runs&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#check_run"&gt;https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#check_run&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="22-. What additional parameter can be added to the workflow status badge URL to display the status of a specific branch?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>?branch=WORKFLOW-NAME </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>?branch=BRANCH-NAME </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>?workflow=WORKFLOW-NAME </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>?commit=COMMIT-HASH </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;Adding &lt;code&gt;?branch=BRANCH-NAME&lt;/code&gt; to the end of the status badge URL allows you to display the status of a specific branch&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;?commit=COMMIT-HASH&lt;/code&gt; is not used for displaying the status of a specific branch&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;?workflow=WORKFLOW-NAME&lt;/code&gt; is not used for specifying the branch in the URl&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;?branch=WORKFLOW-NAME&lt;/code&gt; is incorrect; you would have to set &lt;code&gt;?branch&lt;/code&gt; to equal to the branch name&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge"&gt;https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="23-. In which scenario is using GitHub-hosted runners more suitable?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="true">
+        <text>when you leverage the resources provided by GitHub for continuous integration</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>when you need complete control over the runner environment</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>when you require specific security configurations for you CI/CD processes</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>when you want to run workflows exclusively on your local machine</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;GitHub manages GitHub-hosted runners and provides a scalable and convenient option for running workflows without the need for additional setup and maintenance.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;GitHub-hosted runners are managed by GitHub, and users do not have complete control over the runner environment&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Specific security configurations are more associated with self-hosted runners, not GitHub-hosted runners&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Running workflows exclusively on a local machine is not the purpose of GitHub-hosted runners&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners"&gt;https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="24-. When selecting the appropriate runners for support workloads in GitHub Actions, what factor is essential to consider specifically concerning supported operating systems?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>cost of licensing for the operating system</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>compatibility of the operating system with the tools and dependencies required for support tasks</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>frequency of updates provided by the operating system vendor</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>popularity of the operating system among team members</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;The compatibility of the operating system with the tools and dependencies required for support tasks is crucial because it ensures that the runners can effectively execute the necessary tasks without encountering compatibility issues or limitations.&lt;/p&gt;&lt;p&gt;Remember that GitHub runners support &lt;code&gt;Windows&lt;/code&gt;, &lt;code&gt;Linux&lt;/code&gt;, and &lt;code&gt;macOS&lt;/code&gt;.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;While popularity might influence team preferences, it doesn't directly impact the selection of runners based on operating systems required for support tasks.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Licensing costs may be a consideration for certain organizations, but it's not directly related to selecting runners based on supported operating systems.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The frequency of updates may be important for security and stability, but it's not the primary factor when selecting runners based on operating system compatibility. Instead, compatibility with necessary tools and dependencies is more critical for support tasks.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources"&gt;https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="25-. You want to publish your new action on the GitHub Marketplace to allow others to use it. What are some of the requirements that must be met to be immediately published? (select five)" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="true">
+        <text>the action's metadata file (action.yml) must be in the root directory of the repository</text>
+        <explain>&lt;![CDATA[
+The action's metadata file (action.yml) must be in the root directory of the repository to provide the necessary information about the action, such as its name, description, inputs, and outputs. This file is crucial for the proper functioning and display of the action on the GitHub Marketplace.
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>the name in the action's metadata file must be unique</text>
+        <explain>&lt;![CDATA[
+The name in the action's metadata file must be unique to avoid conflicts with existing actions on the GitHub Marketplace. A unique name ensures that users can easily identify and differentiate your action from others.
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>the name cannot match an existing GitHub Marketplace category</text>
+        <explain>&lt;![CDATA[
+The name of the action cannot match an existing GitHub Marketplace category to prevent confusion and ensure that the action is correctly categorized for users to discover and use. A unique name helps in distinguishing the action from existing categories.
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>the action must be in a public repository</text>
+        <explain>&lt;![CDATA[
+The action must be in a public repository to be accessible and visible to other users who may want to use it. Private repositories cannot be published on the GitHub Marketplace.
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;When you plan to publish your action to GitHub Marketplace, you'll need to ensure that the repository only includes the metadata file, code, and files necessary for the action. Creating a single repository for the action allows you to tag, release, and package the code in a single unit. GitHub also uses the action's metadata on your GitHub Marketplace page.&lt;/p&gt;&lt;p&gt;Actions are published to GitHub Marketplace immediately and aren't reviewed by GitHub as long as they meet these requirements:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;The action must be in a public repository.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Each repository must contain a single action.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Each repository must &lt;em&gt;not&lt;/em&gt; contain any workflow files.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The action's metadata file (&lt;code&gt;action.yml&lt;/code&gt;) must be in the root directory of the repository.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The &lt;code&gt;name&lt;/code&gt; in the action's metadata file must be unique.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;The &lt;code&gt;name&lt;/code&gt; cannot match an existing action name published on GitHub Marketplace.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The &lt;code&gt;name&lt;/code&gt; cannot match a user or organization on GitHub, unless the user or organization owner is publishing the action. For example, only the GitHub organization can publish an action named &lt;code&gt;github&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The &lt;code&gt;name&lt;/code&gt; cannot match an existing GitHub Marketplace category.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;GitHub reserves the names of GitHub features.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/creating-actions/publishing-actions-in-github-marketplace"&gt;https://docs.github.com/en/actions/creating-actions/publishing-actions-in-github-marketplace&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="26-. What condition prevents a user from approving a deployment from a workflow run they initiated?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>the user does not have sufficient permissions</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>the user’s account is not a GitHub Pro or Enterprise plan</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>the targeted environment variable has a self-approval prevention configuration</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>the job is not properly configured</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;If the targeted environment is configured to prevent self-approvals, the user initiating the workflow run cannot approve the deployment&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;While insufficient permissions might prevent approval, the specific condition is if the targeted environment variable has a self-approval prevention configuration&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The user’s plan level does not directly impact their ability to approve deployments&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;While a misconfigured environment could cause issues, the specific condition is if the targeted environment variable has a self-approval prevention configuration&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/managing-workflow-runs/reviewing-deployments"&gt;https://docs.github.com/en/actions/managing-workflow-runs/reviewing-deployments&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="27-. Which configuration provides a valid check to proceed with the steps only if the main branch triggered the workflow? (select two)" isCheck="true" imagePath="">
+    <responses>
+      <response isValid="true" imagePath="3_27_1.png">
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false" imagePath="3_27_2.png">
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false" imagePath="3_27_3.png">
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true" imagePath="3_27_4.png">
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;div class="ud-component--base-components--code-block"&gt;&lt;div&gt;&lt;pre class="prettyprint linenums prettyprinted" role="presentation" style=""&gt;&lt;ol class="linenums"&gt;&lt;li class="L0"&gt;&lt;span class="pln"&gt;name&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; CI&lt;/span&gt;&lt;/li&gt;&lt;li class="L1"&gt;&lt;span class="pln"&gt;on&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; push&lt;/span&gt;&lt;/li&gt;&lt;li class="L2"&gt;&lt;span class="pln"&gt;jobs&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L3"&gt;&lt;span class="pln"&gt;  prod&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;check&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L4"&gt;&lt;span class="pln"&gt;    &lt;/span&gt;&lt;span class="kwd"&gt;if&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; github&lt;/span&gt;&lt;span class="pun"&gt;.&lt;/span&gt;&lt;span class="kwd"&gt;ref&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="pun"&gt;==&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="str"&gt;'refs/heads/main'&lt;/span&gt;&lt;/li&gt;&lt;li class="L5"&gt;&lt;span class="pln"&gt;    runs&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;on&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; ubuntu&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;latest&lt;/span&gt;&lt;/li&gt;&lt;li class="L6"&gt;&lt;span class="pln"&gt;    steps&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L7"&gt;&lt;span class="pln"&gt;      &lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt; run&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; echo &lt;/span&gt;&lt;span class="str"&gt;"the main branch triggered this workflow"&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;p&gt;This configuration uses the condition &lt;code&gt;github.ref == 'refs/heads/main'&lt;/code&gt; to accurately check if the main branch triggered the workflow. This ensures that the steps under the &lt;code&gt;prod-check&lt;/code&gt; job will only execute when a push event occurs on the main branch.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;div class="ud-component--base-components--code-block"&gt;&lt;div&gt;&lt;pre class="prettyprint linenums prettyprinted" role="presentation" style=""&gt;&lt;ol class="linenums"&gt;&lt;li class="L0"&gt;&lt;span class="pln"&gt;name&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; CI&lt;/span&gt;&lt;/li&gt;&lt;li class="L1"&gt;&lt;span class="pln"&gt;on&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; push&lt;/span&gt;&lt;/li&gt;&lt;li class="L2"&gt;&lt;span class="pln"&gt;jobs&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L3"&gt;&lt;span class="pln"&gt;  prod&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;check&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L4"&gt;&lt;span class="pln"&gt;    &lt;/span&gt;&lt;span class="kwd"&gt;if&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; $&lt;/span&gt;&lt;span class="pun"&gt;{{&lt;/span&gt;&lt;span class="pln"&gt; github&lt;/span&gt;&lt;span class="pun"&gt;.&lt;/span&gt;&lt;span class="kwd"&gt;ref&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="pun"&gt;==&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="str"&gt;'refs/heads/main'&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="pun"&gt;}}&lt;/span&gt;&lt;/li&gt;&lt;li class="L5"&gt;&lt;span class="pln"&gt;    runs&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;on&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; ubuntu&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;latest&lt;/span&gt;&lt;/li&gt;&lt;li class="L6"&gt;&lt;span class="pln"&gt;    steps&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L7"&gt;&lt;span class="pln"&gt;      &lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt; run&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; echo &lt;/span&gt;&lt;span class="str"&gt;"the main branch triggered this workflow"&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;p&gt;This configuration uses the condition &lt;code&gt;${{github.ref == 'refs/heads/main'}}&lt;/code&gt; to accurately check if the main branch triggered the workflow, using the &lt;code&gt;${{..}}&lt;/code&gt; interpolation syntax for specifying an expression which is supported by GitHub Actions. This ensures that the steps under the &lt;code&gt;prod-check&lt;/code&gt; job will only execute when a push event occurs on the main branch.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;******************&lt;br&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;div class="ud-component--base-components--code-block"&gt;&lt;div&gt;&lt;pre class="prettyprint linenums prettyprinted" role="presentation" style=""&gt;&lt;ol class="linenums"&gt;&lt;li class="L0"&gt;&lt;span class="pln"&gt;name&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; CI&lt;/span&gt;&lt;/li&gt;&lt;li class="L1"&gt;&lt;span class="pln"&gt;on&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; push&lt;/span&gt;&lt;/li&gt;&lt;li class="L2"&gt;&lt;span class="pln"&gt;jobs&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L3"&gt;&lt;span class="pln"&gt;  prod&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;check&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L4"&gt;&lt;span class="pln"&gt;    &lt;/span&gt;&lt;span class="kwd"&gt;if&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; github&lt;/span&gt;&lt;span class="pun"&gt;.&lt;/span&gt;&lt;span class="kwd"&gt;ref&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="pun"&gt;==&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="str"&gt;'main'&lt;/span&gt;&lt;/li&gt;&lt;li class="L5"&gt;&lt;span class="pln"&gt;    runs&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;on&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; ubuntu&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;latest&lt;/span&gt;&lt;/li&gt;&lt;li class="L6"&gt;&lt;span class="pln"&gt;    steps&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L7"&gt;&lt;span class="pln"&gt;      &lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt; run&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; echo &lt;/span&gt;&lt;span class="str"&gt;"the main branch triggered this workflow"&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;p&gt;The condition &lt;code&gt;github.ref == 'main'&lt;/code&gt; will not work as expected because the &lt;code&gt;github.ref&lt;/code&gt; variable contains the full reference name, including the &lt;code&gt;refs/heads/&lt;/code&gt; prefix, while the branch name is usually referenced without this prefix.&amp;nbsp; To fix this issue, you should compare &lt;code&gt;github.ref&lt;/code&gt; with the full reference name of the main branch, including the &lt;code&gt;refs/heads/&lt;/code&gt; prefix.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;div class="ud-component--base-components--code-block"&gt;&lt;div&gt;&lt;pre class="prettyprint linenums prettyprinted" role="presentation" style=""&gt;&lt;ol class="linenums"&gt;&lt;li class="L0"&gt;&lt;span class="pln"&gt;name&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; CI&lt;/span&gt;&lt;/li&gt;&lt;li class="L1"&gt;&lt;span class="pln"&gt;on&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; push&lt;/span&gt;&lt;/li&gt;&lt;li class="L2"&gt;&lt;span class="pln"&gt;jobs&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L3"&gt;&lt;span class="pln"&gt;  prod&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;check&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L4"&gt;&lt;span class="pln"&gt;    &lt;/span&gt;&lt;span class="kwd"&gt;if&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; github&lt;/span&gt;&lt;span class="pun"&gt;.&lt;/span&gt;&lt;span class="kwd"&gt;ref&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="pun"&gt;==&lt;/span&gt;&lt;span class="pln"&gt; main&lt;/span&gt;&lt;/li&gt;&lt;li class="L5"&gt;&lt;span class="pln"&gt;    runs&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;on&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; ubuntu&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;latest&lt;/span&gt;&lt;/li&gt;&lt;li class="L6"&gt;&lt;span class="pln"&gt;    steps&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L7"&gt;&lt;span class="pln"&gt;      &lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt; run&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; echo &lt;/span&gt;&lt;span class="str"&gt;"the main branch triggered this workflow"&lt;/span&gt;&lt;span class="pln"&gt;    &lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;p&gt;The condition &lt;code&gt;github.ref == main&lt;/code&gt; will not work as expected because the reference needs to be specified in single quotes.&amp;nbsp; Additionally if&amp;nbsp; the condition syntax was correct &lt;code&gt;github.ref == 'main'&lt;/code&gt; it would still not work as expected because the &lt;code&gt;github.ref&lt;/code&gt; variable contains the full reference name, including the &lt;code&gt;refs/heads/&lt;/code&gt; prefix, while the branch name is usually referenced without this prefix.&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/using-jobs/using-conditions-to-control-job-execution"&gt;https://docs.github.com/en/actions/using-jobs/using-conditions-to-control-job-execution&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="28-. Why is it important to ensure that the repository only includes the metadata file, code, and files necessary for the action?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="true">
+        <text>to package the action in a single unit for tagging and releasing</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>to increase the repository's visibility on GitHub</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>to reduce the size of the repository</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>to comply with GitHub's review process</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;When you're ready to share your action with the GitHub community, you can publish it to the GitHub Marketplace and reach out to millions of GitHub users. Actions published to the GitHub Marketplace are published immediately if all of the requirements are met. Actions that don't meet the requirements need to be reviewed by GitHub before being published. You'll need to ensure that the repository only includes the metadata file, code, and files necessary for the action. Creating a single repository for the action allows you to tag, release, and package the code in a single unit. GitHub also uses the action's metadata on your GitHub Marketplace page.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;the repository's visibility on GitHub is not directly affected by the content it includes.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;reducing the repository's size is a benefit but not the main reason for including only necessary files.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;complying with GitHub's review process involves meeting the requirements for publishing an action to the GitHub Marketplace, but it's not directly related to the content of the repository.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/creating-actions/publishing-actions-in-github-marketplace"&gt;https://docs.github.com/en/actions/creating-actions/publishing-actions-in-github-marketplace&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="29-. When using job steps for actions, which YAML key is used to specify the GitHub Action to be executed within a job step?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>execute </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>perform </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>uses </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>action </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;The &lt;code&gt;uses&lt;/code&gt; keyword is used to specify the GitHub Action that should be executed within a job step. It allows referencing and using external actions, either from the same repository or from other repositories, to perform specific tasks as part of the workflow.&lt;/p&gt;&lt;p&gt;********************&lt;/p&gt;&lt;p&gt;&lt;strong&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;There is no &lt;code&gt;action&lt;/code&gt; keyword for specifying actions with job steps&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;There is no &lt;code&gt;execute&lt;/code&gt; keyword for specifying actions with job steps&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;There is no &lt;code&gt;perform&lt;/code&gt; keyword for specifying actions with job steps&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsuses"&gt;https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsuses&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="30-. When using required: true for inputs in a GitHub Actions workflow file, what behavior should you expect when manually running the workflow with workflow_dispatch?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>inputs are automatically populated based on the previous run's inputs</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>the workflow will return an error if inputs are not specified</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>GitHub will automatically prompt the user to specify inputs before running the workflow</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>the workflow will automatically run without requiring input specification</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;When &lt;code&gt;required: true&lt;/code&gt; is set for inputs in a workflow file and the workflow is triggered manually using &lt;code&gt;workflow_dispatch&lt;/code&gt;, GitHub will prompt the user to specify inputs before running the workflow. This ensures that the required inputs are provided before execution.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;If &lt;code&gt;required: true&lt;/code&gt; is set, the workflow will not automatically run without input specification, especially when triggered manually using &lt;code&gt;workflow_dispatch&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Workflows using &lt;code&gt;required: true&lt;/code&gt; will not automatically return an error if inputs are not specified. Instead, GitHub will prompt the user to provide the required inputs.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Inputs are not automatically populated based on the previous run's inputs. The user needs to provide inputs manually when triggering the workflow.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#example-specifying-inputs"&gt;https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#example-specifying-inputs&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="31-. How many required inputs are declared in the metadata of this actions example?" isCheck="false" imagePath="image_3_31.png">
+    <responses>
+      <response isValid="true">
+        <text>1</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>0</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>2</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>3</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;This example configures one (1) required input: &lt;code&gt;server-cpu-count&lt;/code&gt;.&amp;nbsp; &lt;code&gt;server-cpu-count&lt;/code&gt; is required and has no default value.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;******************&lt;br&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;This example configures two (2) inputs: &lt;code&gt;num-servers&lt;/code&gt; and &lt;code&gt;server-cpu-count&lt;/code&gt;, but only one is required.&amp;nbsp; The &lt;code&gt;num-servers&lt;/code&gt; input is not required since the required keyword is set to false, and will default to a value of 3. &lt;code&gt;server-cpu-count&lt;/code&gt; is required and has no default value.&lt;/p&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#inputs"&gt;https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#inputs&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="32-. GitHub Actions users in your organization are complaining that they can no longer use popular actions, such as checkout and labeler. What is the reason for this?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>the organization has not been added to the public GitHub repository</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>the owner has restricted actions and reusable workflows to only those from your organization</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>users are trying to use the actions with self-hosted runners</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>the default GITHUB_TOKEN does not have read access to reuse these actions</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;You can choose to disable GitHub Actions for all repositories in your organization or only allow specific repositories. You can also limit the use of public actions and reusable workflows so that people can only use local actions and reusable workflows that exist in your organization.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;p&gt;In the upper-right corner of GitHub.com, select your profile photo, then click &lt;strong&gt;Your organizations&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Next to the organization, click &lt;strong&gt;Settings&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;In the left sidebar, click &lt;strong&gt;Actions&lt;/strong&gt;, then click &lt;strong&gt;General&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Under "Policies", select an option.&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;If you choose &lt;strong&gt;Allow &lt;em&gt;OWNER&lt;/em&gt;, and select non-&lt;em&gt;OWNER&lt;/em&gt;, actions and reusable workflows&lt;/strong&gt;, actions and reusable workflows within your organization are allowed, and there are additional options for allowing other specific actions and reusable workflows.&lt;/p&gt;&lt;p&gt;When you allow actions and reusable workflows from only in your organization, the policy blocks all access to actions authored by GitHub. For example, the &lt;a href="https://github.com/actions/checkout"&gt;&lt;code&gt;actions/checkout&lt;/code&gt;&lt;/a&gt; action would not be accessible.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Organizations do not need to be added to public repositories in order to use the reusable workflows and actions. The issue is that the organizational owner has restricted the actions that can be used by the organization.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The GITHUB_TOKEN does not come into play here since we are accessing publicly-facing repositories. The issue is that the organizational owner has restricted the actions that can be used by the organization.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Reuable workflows and actions can be used by GitHub-managed or self-hosted runners. The issue is that the organizational owner has restricted the actions that can be used by the organization.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/organizations/managing-organization-settings/disabling-or-limiting-github-actions-for-your-organization#managing-github-actions-permissions-for-your-organization"&gt;https://docs.github.com/en/organizations/managing-organization-settings/disabling-or-limiting-github-actions-for-your-organization#managing-github-actions-permissions-for-your-organization&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="33-. What is the purpose of the jobs.&lt;job_id&gt;.runs-on configuration in a GitHub Actions workflow?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>defines environment variables for a specific job</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>declares the GitHub Actions runner version to be used</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>specifies the operating system and virtual environment for job execution</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>sets up conditional statements for job execution</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;The &lt;code&gt;jobs.&amp;lt;job_id&amp;gt;.runs-on&lt;/code&gt; configuration is used to specify the type of runner and the operating system on which the job should be executed. It allows you to define the environment in which the job’s steps will run, such as Ubuntu, macOS, Windows, or a custom environment.&lt;/p&gt;&lt;p&gt;********************&lt;/p&gt;&lt;p&gt;&lt;strong&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;The runner version is managed by GitHub and typically does not need to explicitly declared in the workflow configuration&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Conditional statements are typically defined at a higher level in the workflow. Conditional logic can be applied to jobs using other configuration options&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The keyword &lt;code&gt;env&lt;/code&gt; is used to define environment variables for a specific job&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idruns-on"&gt;https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idruns-on&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="34-. Phil would like to filter all workflow runs triggered by a pull request.  Which filter can Phil use to achieve this in the GitHub Actions tab of his repository?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>Actor</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>Status</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>Event</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>Branch</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;By selecting "Event" filter in the GitHub Actions tab of his repository, Phil can filter workflow runs based on event type. Since workflow runs triggered by pull requests are considered pull request events, Phil can filter them using the "Event &amp;gt;&amp;gt; pull_request" filter.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;******************&lt;br&gt;WRONG ANSWERS&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Filtering by "Status" would filter workflow runs based on their status, not specifically on whether they were triggered by a pull request or not.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Filtering by "Branch" would filter workflow runs based on the branch where the changes were made, not specifically on whether they were triggered by a pull request or not.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Filtering by "Actor" would filter workflow runs based on the user or account that triggered them, not specifically on whether they were triggered by a pull request or not.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/using-workflows/triggering-a-workflow"&gt;https://docs.github.com/en/actions/using-workflows/triggering-a-workflow&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="35-. What is a requirement for publishing an action to GitHub Marketplace?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>the actions metadata file must be in a subdirectory</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>each repository can contain multiple actions</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>the action’s metadata file must be in the root directory of the repository</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>the action must be in a private repository</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;To publish an action, the action’s metadata file must be in the root directory of the repository&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Actions must be in a public repository&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;GitHub Marketplace requires each repository to contain a single action&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The metadata file must be in the root directory, not the subdirectory&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/creating-actions/publishing-actions-in-github-marketplace"&gt;https://docs.github.com/en/actions/creating-actions/publishing-actions-in-github-marketplace&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="36-. What will occur if the .github/workflows directory contains an invalid workflow file?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="true">
+        <text>GitHub Actions generates a failed workflow run for every new commit</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>GitHub Actions will automatically fix the syntax errors in the invalid workflow file</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>GitHub Actions will place the invalid workflow files into a separate branch inside the repository</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>GitHub Actions will be disabled for the repository to prevent any failed workflow runs</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;Please make sure that you only commit valid workflow files to your repository. If &lt;code&gt;.github/workflows&lt;/code&gt; contains an invalid workflow file, GitHub Actions generates a failed workflow run for every new commit.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;******************&lt;br&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;GitHub Actions is not automatically disabled when there are invalid workflow files in the `.github/workflows` directory.&amp;nbsp; Disabling GitHub Actions altogether for the repository does prevent failed workflow runs. However, this action would also disable all other GitHub Actions workflows, which may not be desirable if the repository relies on other workflows for automation and CI/CD processes. Additionally, it does not address the root cause of the issue, which is committing invalid workflow files.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;GitHub Actions does not create a separate branch for invalid workflow files.&amp;nbsp; While creating a separate branch for testing workflow files is a good practice for ensuring changes don't disrupt the main branch, it doesn't directly address the issue of committing invalid workflow files. Testing in a separate branch is important, but it should be complemented by manual validation and review of workflow files to prevent the generation of failed workflow runs.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;GitHub does not automatically fix syntax errors in workflow files. It's the responsibility of the repository owner or contributors to correct any syntax errors manually.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/using-workflow-run-logs"&gt;https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/using-workflow-run-logs&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="37-. What is the maximum number of jobs that a matrix can generate per workflow run?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>512 jobs</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>256 jobs</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>128 jobs</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>unlimited amount of jobs</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;GitHub limits the maximum number of jobs generated by a matrix to 256 jobs per workflow run&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;The correct limit is 256 jobs, not 128&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The correct limit is 256 jobs, not 512&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;There is a limited amount of jobs that a matrix can generate per workflow run, and it is 256&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs#using-a-matrix-strategy:~:text=A%20matrix%20will%20generate%20a%20maximum%20of%20256%20jobs%20per%20workflow%20run.%20This%20limit%20applies%20to%20both%20GitHub%2Dhosted%20and%20self%2Dhosted%20runners."&gt;https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs#using-a-matrix-strategy:~:text=A%20matrix%20will%20generate%20a%20maximum%20of%20256%20jobs%20per%20workflow%20run.%20This%20limit%20applies%20to%20both%20GitHub%2Dhosted%20and%20self%2Dhosted%20runners.&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="38-. What is the standard syntax for referencing secrets so you can use the GITHUB_TOKEN?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>${{GITHUB_TOKEN.secrets }} </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>${{ mySecrets.GITHUB_TOKEN }}</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>${{ secrets.GITHUB_TOKEN }} </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>${{ GITHUB_TOKEN }} </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;You can use the &lt;code&gt;GITHUB_TOKEN&lt;/code&gt; by using the standard syntax for reference secrets: &lt;code&gt;${{ secrets.GITHUB_TOKEN }}&lt;/code&gt;. Some examples of using the &lt;code&gt;GITHUB_TOKEN&lt;/code&gt; include passing the token as an input to an action, or using it to make an authenticated GitHub API request.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;code&gt;${{ GITHUB_TOKEN }}&lt;/code&gt; is not correct as there is &lt;code&gt;secret.&lt;/code&gt; before the &lt;code&gt;GITHUB_TOKEN&lt;/code&gt;&lt;/p&gt;&lt;p&gt;&lt;code&gt;${{ mySecrets.GITHUB_TOKEN }}&lt;/code&gt; is not correct as there is no &lt;code&gt;mySecrets&lt;/code&gt;, it is just &lt;code&gt;secrets&lt;/code&gt;&lt;/p&gt;&lt;p&gt;&lt;code&gt;${{GITHUB_TOKEN.secrets }}&lt;/code&gt; is not correct, the &lt;code&gt;secrets&lt;/code&gt; go before &lt;code&gt;GITHUB_TOKEN&lt;/code&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/security-guides/automatic-token-authentication#using-the-github_token-in-a-workflow"&gt;https://docs.github.com/en/actions/security-guides/automatic-token-authentication#using-the-github_token-in-a-workflow&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="39-. Which key in a workflow file is used to set a custom environment variable for a single workflow?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="true">
+        <text>env </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>jobs </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>steps </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>variables </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;To set a custom environment variable for a single workflow, you can define it using the env key in the workflow file.&amp;nbsp; An example is as follows:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;div class="ud-component--base-components--code-block"&gt;&lt;div&gt;&lt;pre class="prettyprint linenums prettyprinted" role="presentation" style=""&gt;&lt;ol class="linenums"&gt;&lt;li class="L0"&gt;&lt;span class="pln"&gt;name&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Greeting&lt;/span&gt;&lt;span class="pln"&gt; on variable day&lt;/span&gt;&lt;/li&gt;&lt;li class="L1"&gt;&lt;span class="pln"&gt;&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;li class="L2"&gt;&lt;span class="pln"&gt;on&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L3"&gt;&lt;span class="pln"&gt;  workflow_dispatch&lt;/span&gt;&lt;/li&gt;&lt;li class="L4"&gt;&lt;span class="pln"&gt;&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;li class="L5"&gt;&lt;span class="pln"&gt;env&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L6"&gt;&lt;span class="pln"&gt;  DAY_OF_WEEK&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Monday&lt;/span&gt;&lt;/li&gt;&lt;li class="L7"&gt;&lt;span class="pln"&gt;&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;li class="L8"&gt;&lt;span class="pln"&gt;jobs&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L9"&gt;&lt;span class="pln"&gt;  greeting_job&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L0"&gt;&lt;span class="pln"&gt;    runs&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;on&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; ubuntu&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;latest&lt;/span&gt;&lt;/li&gt;&lt;li class="L1"&gt;&lt;span class="pln"&gt;    env&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L2"&gt;&lt;span class="pln"&gt;      &lt;/span&gt;&lt;span class="typ"&gt;Greeting&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Hello&lt;/span&gt;&lt;/li&gt;&lt;li class="L3"&gt;&lt;span class="pln"&gt;    steps&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L4"&gt;&lt;span class="pln"&gt;      &lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt; name&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="str"&gt;"Say Hello Mona it's Monday"&lt;/span&gt;&lt;/li&gt;&lt;li class="L5"&gt;&lt;span class="pln"&gt;        run&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; echo &lt;/span&gt;&lt;span class="str"&gt;"$Greeting $First_Name. Today is $DAY_OF_WEEK!"&lt;/span&gt;&lt;/li&gt;&lt;li class="L6"&gt;&lt;span class="pln"&gt;        env&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L7"&gt;&lt;span class="pln"&gt;          &lt;/span&gt;&lt;span class="typ"&gt;First_Name&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Mona&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;******************&lt;br&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;There isn't a dedicated &lt;code&gt;variables&lt;/code&gt; key in GitHub Actions workflows. Instead, you define variables directly under the env key or within jobs or steps as needed.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The &lt;code&gt;jobs&lt;/code&gt; key is used to define the individual jobs that make up a workflow. While environment variables can be set within the context of a job using the env keyword, setting custom environment variables for the entire workflow is not the primary purpose of the jobs key.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The &lt;code&gt;steps&lt;/code&gt; key is used to define the sequence of steps that comprise each job within a workflow. While environment variables can be set within individual steps using the env keyword, setting custom environment variables for the entire workflow is not the primary purpose of the steps key.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/learn-github-actions/variables#defining-environment-variables-for-a-single-workflow"&gt;https://docs.github.com/en/actions/learn-github-actions/variables#defining-environment-variables-for-a-single-workflow&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="40-. How can you view detailed logs to troubleshoot issues with a Docker container action in GitHub Actions?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>use the docker logs command to view detailed logs for the Docker container action</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>check the GitHub Actions logs for detailed information about the execution of the Docker container action</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>review the Docker container action's README file for troubleshooting tips</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>use the git log command to view commit history related to the Docker container action</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;Checking the GitHub Actions logs provides detailed information about the execution of Docker container actions, including any errors encountered during startup or execution, aiding in troubleshooting.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;The &lt;code&gt;&lt;strong&gt;docker logs&lt;/strong&gt;&lt;/code&gt; command is typically used to view logs for running Docker containers on the local machine. However, GitHub Actions logs are not accessible using this command, so it does not provide detailed information about the execution of Docker container actions within GitHub Actions workflows.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;While README files may contain useful information about the Docker container action, they may not provide detailed logs or information about specific issues encountered during execution within GitHub Actions workflows.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;the &lt;code&gt;&lt;strong&gt;git log&lt;/strong&gt;&lt;/code&gt; command is used to view commit history for Git repositories. However, it does not provide information about the execution or logs of Docker container actions within GitHub Actions workflows.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/creating-actions/dockerfile-support-for-github-actions"&gt;https://docs.github.com/en/actions/creating-actions/dockerfile-support-for-github-actions&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="41-. What is a drawback of using tags for versioning GitHub Actions, and what is the recommended alternative?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>Tags are vulnerable to being truncated or abbreviated, leading to inaccuracies in version tracking. The recommended alternative is to use full commit SHAs for versioning.</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>Tags can only be applied to released versions, limiting flexibility in managing interim changes. The recommended alternative is to use commit SHAs for versioning</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>Tags may not accurately represent the commit history and can be prone to deletion or movement. The recommended alternative is to use commit SHAs for versioning</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>Tags can be easily manipulated or moved, leading to potential versioning inconsistencies. The recommended alternative is to use branch names for versioning.</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;Tags are useful and widely used, but one downside to using tags is that they can be deleted or moved. With Git, each commit receives a calculated SHA value, which is unique and cannot be modified. Using a commit SHA for versioning will give you the most reliable and secure way to version and use an action. However, often in Git you can abbreviate the SHA hash to the first several characters, and Git will recognize the reference. If you're using the commit's SHA for release management, you need to use the full SHA value and not the abbreviated value.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;branch names are not recommended for versioning GitHub Actions.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;tags can only be applied to released versions, which is not a drawback of using tags.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;tags cannot be truncated or abbreviated; however, using abbreviated commit SHAs is discouraged for versioning GitHub Actions.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;
+]]&gt;</explain>
+  </question>
+  <question title="42-. When establishing corporate standards for managing GitHub Actions workflows within a large organization, which of the following elements are essential to document for optimal clarity and organization? (select three)" isCheck="true" imagePath="">
+    <responses>
+      <response isValid="true">
+        <text>repositories used for storing different workflow components</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>naming conventions for files and folders within workflows</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>instructions for setting up and integrating individual workflows</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>plans for ongoing maintenance and version control of workflows</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;Creating a GitHub Actions workflow often involves writing multiple files and creating several repositories to specify the workflow in itself, as well as the actions, containers, and/or runners to use in the workflow. Depending on the number of users in your Enterprise Cloud or Enterprise Server instance, things can get messy pretty quickly if you don't have corporate standards in place for creating GitHub Actions workflows.&lt;/p&gt;&lt;p&gt;As a best practice, we recommend you document the following in a GitHub wiki or as a markdown file in a repository accessible to all within an organization:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Repositories for storage&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Files/folders naming conventions&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Location of shared components&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Plans for ongoing maintenance&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Contribution guidelines&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;*******************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWER:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Documenting individual workflow setup instructions is redundant with established standards and best practices. While providing some context might be helpful in rare cases, focusing on broader guidelines ensures consistency and avoids unnecessary clutter.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/using-workflows/reusing-workflows"&gt;https://docs.github.com/en/actions/using-workflows/reusing-workflows&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="43-. You need to monitor the status of the self-hosted runners that have been deployed in your organization. After logging into the GitHub UI, what valid status types can you expect to see? (select three)" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="true">
+        <text>offline </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>idle </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>active </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>overloaded </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;Under "Runners," you can view a list of registered runners, including the runner's name, labels, and status.&lt;/p&gt;&lt;p&gt;The status can be one of the following:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;idle&lt;/code&gt;: The runner is connected to GitHub and is ready to execute jobs.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;active&lt;/code&gt;: The runner is currently executing a job.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;offline&lt;/code&gt;: The runner is not connected to GitHub. This could be because the machine is offline, the self-hosted runner application is not running on the machine, or the self-hosted runner application cannot communicate with GitHub.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;*******************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWER:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;overloaded&lt;/code&gt; is not a valid runner status in GitHub&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/monitoring-and-troubleshooting-self-hosted-runners#checking-the-status-of-a-self-hosted-runner"&gt;https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/monitoring-and-troubleshooting-self-hosted-runners#checking-the-status-of-a-self-hosted-runner&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="44-. What is a common purpose of using custom environment variables?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>control the flow of execution in the code</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>to store and reuse non-sensitive configuration information</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>define global constants for the entire project</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>specify the file paths for input and output</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;One common use of custom environment variables is storing and reusing non-sensitive configuration information without hardcoding it in the code, making your code more reusable.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;While environment variables can influence the behavior of code, controlling the flow of execution is not their primary purpose&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Environment variables are typically used for configuration rather than defining constants for the entire project&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;This is a possible use of environment variables, but it is not the primary purpose&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/learn-github-actions/variables#defining-environment-variables-for-a-single-workflow"&gt;https://docs.github.com/en/actions/learn-github-actions/variables#defining-environment-variables-for-a-single-workflow&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="45-. What is the purpose of the timeout-minutes keyword in a step?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>it specifies the maximum duration a job is allowed to run</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>it sets the timeout for waiting on external events before proceeding to the next step</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>it defines the time interval for individual commands within a step</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>it specifies the maximum number of minutes to run the step before killing the process</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;The &lt;code&gt;timeout-minutes&lt;/code&gt; keyword is used to set a maximum duration for the execution of individual commands within a step. If a command takes longer to execute than the specified timeout, the step will be marked as failed, and the workflow will proceed to the next step.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;The &lt;code&gt;timeout-minutes&lt;/code&gt; keyword specifically to individual steps, not the entire job&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The keyword does not define the time interval for retrying the step; it limits the duration of the execution of the commands within the step.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Setting the timeout for waiting on external events is not the purpose of the &lt;code&gt;timeout-minutes&lt;/code&gt; keyword; it is more related to the &lt;code&gt;timeout&lt;/code&gt; attribute at the job level&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idtimeout-minutes"&gt;https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idtimeout-minutes&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="46-. How can you execute a command stored in your GitHub repository using a workflow?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="true">
+        <text>by running a script directly using the run keyword and specifying its location on the runner</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>by embedding the script directly within the workflow configuration file</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>by using a third-party tool to trigger the execution of the script</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>by manually copying the script to the runner and executing it</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;GitHub Actions workflows allow you to execute commands directly on the runner using the &lt;code&gt;run&lt;/code&gt; keyword. You can specify the location of the script within the repository and execute it with this keyword&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;GitHub Actions automatically checks out the repository to the runner, so you don't need to manually copy scripts&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;GitHub Actions is a built-in CI/CD tool provided by GitHub itself, so there's no need for a third-party tool to execute scripts from the repository&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;GitHub Actions workflows are designed to run scripts stored in the repository rather than embedding them directly within the workflow configuration file&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/learn-github-actions/essential-features-of-github-actions#adding-scripts-to-your-workflow"&gt;https://docs.github.com/en/actions/learn-github-actions/essential-features-of-github-actions#adding-scripts-to-your-workflow&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="47-. What considerations should be made when developing JavaScript actions for GitHub Actions to ensure compatibility with all GitHub-hosted runners?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>package the JavaScript code using Node.js packages provided by the GitHub Actions Toolkit for faster development</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>write the JavaScript code to be pure JavaScript and not dependent on other binaries to ensure compatibility with all GitHub-hosted runners</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>develop the JavaScript code to run within a Docker container to ensure consistent execution across different operating systems</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>ensure that the JavaScript code relies on other binaries present in the runner image to speed up execution</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;JavaScript actions for GitHub Actions should be developed to be pure JavaScript and not reliant on other binaries. This ensures compatibility with all GitHub-hosted runners, including Ubuntu, Windows, and macOS. Since JavaScript actions run directly on the runner and utilize binaries already present in the runner image, depending on additional binaries may lead to compatibility issues. Therefore, writing pure JavaScript code is essential for ensuring consistent execution across different environments.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Relying on binaries in the runner image may cause compatibility issues across different runners.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Using Node.js packages from the toolkit doesn't ensure compatibility with all runners.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Running JavaScript code in Docker contradicts the provided information and adds unnecessary complexity.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/creating-actions/about-custom-actions#javascript-actions"&gt;https://docs.github.com/en/actions/creating-actions/about-custom-actions#javascript-actions&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="48-. Tony would like to include a job that echoes the current repository name.  Which of the following code snippets provides an example that Tony could use?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false" imagePath="3_48_1.png">
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false" imagePath="3_48_2.png">
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true" imagePath="3_48_3.png">
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false" imagePath="3_48_4.png">
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;Tony can use the following example:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;div class="ud-component--base-components--code-block"&gt;&lt;div&gt;&lt;pre class="prettyprint linenums prettyprinted" role="presentation" style=""&gt;&lt;ol class="linenums"&gt;&lt;li class="L0"&gt;&lt;span class="pln"&gt;name&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Code&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Repository&lt;/span&gt;&lt;/li&gt;&lt;li class="L1"&gt;&lt;span class="pln"&gt;&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;li class="L2"&gt;&lt;span class="pln"&gt;on&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L3"&gt;&lt;span class="pln"&gt;&amp;nbsp; push&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L4"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; branches&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L5"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt; main&lt;/span&gt;&lt;/li&gt;&lt;li class="L6"&gt;&lt;span class="pln"&gt;&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;li class="L7"&gt;&lt;span class="pln"&gt;jobs&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L8"&gt;&lt;span class="pln"&gt;&amp;nbsp; example&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;job&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L9"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; runs&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;on&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; ubuntu&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;latest&lt;/span&gt;&lt;/li&gt;&lt;li class="L0"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; steps&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L1"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt; name&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Print&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Repository&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Information&lt;/span&gt;&lt;/li&gt;&lt;li class="L2"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; run&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="pun"&gt;|&lt;/span&gt;&lt;/li&gt;&lt;li class="L3"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; echo &lt;/span&gt;&lt;span class="str"&gt;"Current Repository: $GITHUB_REPOSITORY"&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;p&gt;In this example:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;We define a workflow that runs on pushes to the main branch.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The example-job job runs on an Ubuntu latest virtual environment.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Within the job, we have a step named "Print Repository Information".&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The run attribute of this step contains a shell command that prints the value of the GITHUB_REPOSITORY environment variable.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The &lt;code&gt;GITHUB_REPOSITORY &lt;/code&gt;default environment variable provides the owner and repository name (in the format owner/repository) for the repository where the workflow is running. Here's an example of how you can use &lt;code&gt;GITHUB_REPOSITORY&lt;/code&gt; in a GitHub Actions workflow:&lt;/p&gt;&lt;p&gt;&lt;strong&gt;******************&lt;br&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;div class="ud-component--base-components--code-block"&gt;&lt;div&gt;&lt;pre class="prettyprint linenums prettyprinted" role="presentation" style=""&gt;&lt;ol class="linenums"&gt;&lt;li class="L0"&gt;&lt;span class="pln"&gt;name&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Code&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Repository&lt;/span&gt;&lt;/li&gt;&lt;li class="L1"&gt;&lt;span class="pln"&gt;&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;li class="L2"&gt;&lt;span class="pln"&gt;on&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L3"&gt;&lt;span class="pln"&gt;&amp;nbsp; push&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L4"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; branches&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L5"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt; main&lt;/span&gt;&lt;/li&gt;&lt;li class="L6"&gt;&lt;span class="pln"&gt;&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;li class="L7"&gt;&lt;span class="pln"&gt;jobs&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L8"&gt;&lt;span class="pln"&gt;&amp;nbsp; example&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;job&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L9"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; runs&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;on&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; ubuntu&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;latest&lt;/span&gt;&lt;/li&gt;&lt;li class="L0"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; steps&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L1"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt; name&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Print&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Repository&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Information&lt;/span&gt;&lt;/li&gt;&lt;li class="L2"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; run&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="pun"&gt;|&lt;/span&gt;&lt;/li&gt;&lt;li class="L3"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; echo &lt;/span&gt;&lt;span class="str"&gt;"Current Repository: GITHUB_REPOSITORY"&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;p&gt;This example is incorrect because it will result in "Current Repository: GITHUB_REPOSITORY"&amp;nbsp; The &lt;code&gt;$&lt;/code&gt; is missing before the environment variable &lt;code&gt;GITHUB_REPOSITORY&lt;/code&gt;.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;div class="ud-component--base-components--code-block"&gt;&lt;div&gt;&lt;pre class="prettyprint linenums prettyprinted" role="presentation" style=""&gt;&lt;ol class="linenums"&gt;&lt;li class="L0"&gt;&lt;span class="pln"&gt;name&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Code&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Repository&lt;/span&gt;&lt;/li&gt;&lt;li class="L1"&gt;&lt;span class="pln"&gt;&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;li class="L2"&gt;&lt;span class="pln"&gt;on&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L3"&gt;&lt;span class="pln"&gt;&amp;nbsp; push&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L4"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; branches&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L5"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt; main&lt;/span&gt;&lt;/li&gt;&lt;li class="L6"&gt;&lt;span class="pln"&gt;&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;li class="L7"&gt;&lt;span class="pln"&gt;jobs&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L8"&gt;&lt;span class="pln"&gt;&amp;nbsp; example&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;job&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L9"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; runs&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;on&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; ubuntu&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;latest&lt;/span&gt;&lt;/li&gt;&lt;li class="L0"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; steps&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L1"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt; name&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Print&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Repository&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Information&lt;/span&gt;&lt;/li&gt;&lt;li class="L2"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; run&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="pun"&gt;|&lt;/span&gt;&lt;/li&gt;&lt;li class="L3"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; echo &lt;/span&gt;&lt;span class="str"&gt;"Current Repository: $GITHUB_REPOSITORY"&lt;/span&gt;&lt;/li&gt;&lt;li class="L4"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; env&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L5"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; GITHUB_REPOSITORY&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; actions&lt;/span&gt;&lt;span class="pun"&gt;/&lt;/span&gt;&lt;span class="pln"&gt;code&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;examples&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;This example is incorrect because when you set an environment variable, you cannot use any of the default environment variable names. &lt;code&gt;GITHUB_REPOSITORY&lt;/code&gt; is a default environment variable name.&lt;/p&gt;&lt;div class="ud-component--base-components--code-block"&gt;&lt;div&gt;&lt;pre class="prettyprint linenums prettyprinted" role="presentation" style=""&gt;&lt;ol class="linenums"&gt;&lt;li class="L0"&gt;&lt;span class="pln"&gt;name&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Code&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Repository&lt;/span&gt;&lt;/li&gt;&lt;li class="L1"&gt;&lt;span class="pln"&gt;&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;li class="L2"&gt;&lt;span class="pln"&gt;on&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L3"&gt;&lt;span class="pln"&gt;&amp;nbsp; push&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L4"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; branches&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L5"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt; main&lt;/span&gt;&lt;/li&gt;&lt;li class="L6"&gt;&lt;span class="pln"&gt;&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;li class="L7"&gt;&lt;span class="pln"&gt;jobs&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L8"&gt;&lt;span class="pln"&gt;&amp;nbsp; example&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;job&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L9"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; runs&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;on&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; ubuntu&lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt;latest&lt;/span&gt;&lt;/li&gt;&lt;li class="L0"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; steps&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L1"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt; name&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Print&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Repository&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Information&lt;/span&gt;&lt;/li&gt;&lt;li class="L2"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; run&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="pun"&gt;|&lt;/span&gt;&lt;/li&gt;&lt;li class="L3"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; echo &lt;/span&gt;&lt;span class="str"&gt;"Current Repository: $my_repo"&lt;/span&gt;&lt;/li&gt;&lt;li class="L4"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; env&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L5"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; my_repo&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; pwd&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;p&gt;This example is incorrect because it sets a custom environment variable equal to &lt;code&gt;pwd &lt;/code&gt;which does not represent the current repository name.&lt;/p&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables"&gt;https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="49-. What will be the 4 colors echoed back for the jobs in the workflow configuration below?" isCheck="false" imagePath="image_3_49.png">
+    <responses>
+      <response isValid="false" imagePath="3_49_1.png">
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false" imagePath="3_49_2.png">
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true" imagePath="3_49_3.png">
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false" imagePath="3_49_4.png">
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;🎉 My color is green&lt;/p&gt;&lt;p&gt;🎉 My favorite color is blue&lt;/p&gt;&lt;p&gt;🎉 My color is &lt;/p&gt;&lt;p&gt;🎉 My favorite color is orange&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;For my_color_1 job:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;The color set in the first step is green using the favorite_color environment variable at the step level.&lt;/p&gt;&lt;p&gt;When echoing the color, it uses the local my_color environment variable, which is set to green.&lt;/p&gt;&lt;p&gt;However, favorite_color remains blue as it was overridden at the job level but not set at the step level.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;For my_color_2 job:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;The my_color environment variable is not defined in this job, so it will echo as empty.&lt;/p&gt;&lt;p&gt;It doesn't define its own favorite_color, so it defaults to the one defined at the workflow level (orange).&lt;/p&gt;&lt;p&gt;&lt;strong&gt;*******************&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;🎉 My color is green&lt;/p&gt;&lt;p&gt;🎉 My favorite color is blue&lt;/p&gt;&lt;p&gt;🎉 My color is green&lt;/p&gt;&lt;p&gt;🎉 My favorite color is orange&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;For my_color_1 job:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;The color set in the first step is green using the favorite_color environment variable at the step level.&lt;/p&gt;&lt;p&gt;When echoing the color, it uses the local my_color environment variable, which is set to green.&lt;/p&gt;&lt;p&gt;However, favorite_color remains blue as it was overridden at the job level but not set at the step level.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;For my_color_2 job:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;The my_color environment variable is not defined in this job, so it will echo as empty, not as green.&lt;/p&gt;&lt;p&gt;It doesn't define its own favorite_color, so it defaults to the one defined at the workflow level (orange).&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;🎉 My color is green&lt;/p&gt;&lt;p&gt;🎉 My favorite color is orange&lt;/p&gt;&lt;p&gt;🎉 My color is green&lt;/p&gt;&lt;p&gt;🎉 My favorite color is orange&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;For my_color_1 job:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;The color set in the first step is green using the favorite_color environment variable at the step level.&lt;/p&gt;&lt;p&gt;When echoing the color, it uses the local my_color environment variable, which is set to green.&lt;/p&gt;&lt;p&gt;However, favorite_color remains blue as it was overridden from orange at the job level.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;For my_color_2 job:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;The my_color environment variable is not defined in this job, so it will echo as empty, not as green.&lt;/p&gt;&lt;p&gt;It doesn't define its own favorite_color, so it defaults to the one defined at the workflow level (orange).&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;🎉 My color is green&lt;/p&gt;&lt;p&gt;🎉 My favorite color is blue&lt;/p&gt;&lt;p&gt;🎉 My color is green&lt;/p&gt;&lt;p&gt;🎉 My favorite color is green&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;For my_color_1 job:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;The color set in the first step is green using the favorite_color environment variable at the step level.&lt;/p&gt;&lt;p&gt;When echoing the color, it uses the local my_color environment variable, which is set to green.&lt;/p&gt;&lt;p&gt;However, favorite_color remains blue as it was overridden from orange at the job level.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;For my_color_2 job:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;The my_color environment variable is not defined in this job, so it will echo as empty, not as green.&lt;/p&gt;&lt;p&gt;It doesn't define its own favorite_color, so it defaults to the one defined at the workflow level orange, not green.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/learn-github-actions/"&gt;https://docs.github.com/en/actions/learn-github-actions/&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions?tool=bash#setting-an-environment-variable"&gt;https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions?tool=bash#setting-an-environment-variable&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/learn-github-actions/contexts#env-context"&gt;https://docs.github.com/en/actions/learn-github-actions/contexts#env-context&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="50-. Your development team frequently executes steps involving setting up environments, running tests, and deploying applications across various workflows in GitHub Actions. However, configuring these steps individually in each workflow has become cumbersome and repetitive. Which feature of GitHub Actions can help streamline this process?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>develop some custom JavaScript actions for executing complex logic within workflows</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>create composite actions to combine multiple workflow steps into a single reusable action</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>create some Docker container actions for isolating workflow steps within separate containers</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>use environment-specific workflows for automating tasks based on different deployment environments</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;Composite actions allow combining multiple workflow steps into a single reusable action. This feature helps streamline workflow configuration by consolidating repetitive steps into a reusable component, simplifying maintenance, and promoting code reuse across multiple workflows.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;While custom JavaScript actions can execute complex logic, they may not necessarily address the issue of repetitive and cumbersome workflow configuration.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Docker container actions isolate workflow steps within separate containers, but they do not directly address the issue of streamlining and consolidating multiple steps into a single reusable action.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Environment-specific workflows help automate tasks based on deployment environments but do not specifically address the issue of streamlining and consolidating repetitive steps across workflows.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/creating-actions/about-custom-actions#composite-actions"&gt;https://docs.github.com/en/actions/creating-actions/about-custom-actions#composite-actions&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="51-. Which configuration will trigger a workflow when an issue is opened in the repository?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="true" imagePath="3_51_1.png">
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false" imagePath="3_51_2.png">
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false" imagePath="3_51_3.png">
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false" imagePath="3_51_4.png">
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;All three configurations will trigger a workflow when an issue is opened in the repository, so the correct answer is &lt;strong&gt;all of the above&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;div class="ud-component--base-components--code-block"&gt;&lt;div&gt;&lt;pre class="prettyprint linenums prettyprinted" role="presentation" style=""&gt;&lt;ol class="linenums"&gt;&lt;li class="L0"&gt;&lt;span class="pln"&gt;on&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L1"&gt;&lt;span class="pln"&gt;  issues&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;p&gt;By using on: issues, the workflow will be triggered for any type of issue event, including when an issue is opened. &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;div class="ud-component--base-components--code-block"&gt;&lt;div&gt;&lt;pre class="prettyprint linenums prettyprinted" role="presentation" style=""&gt;&lt;ol class="linenums"&gt;&lt;li class="L0"&gt;&lt;span class="pln"&gt;on&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L1"&gt;&lt;span class="pln"&gt;  issues&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L2"&gt;&lt;span class="pln"&gt;    types&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="pun"&gt;[&lt;/span&gt;&lt;span class="pln"&gt;opened&lt;/span&gt;&lt;span class="pun"&gt;]&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;p&gt;Specifies the issues event and filters it to only trigger the workflow when an issue is opened (types: [opened]). This configuration accurately defines the trigger condition for the workflow, ensuring that it runs specifically when a new issue is opened in the repository.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;div class="ud-component--base-components--code-block"&gt;&lt;div&gt;&lt;pre class="prettyprint linenums prettyprinted" role="presentation" style=""&gt;&lt;ol class="linenums"&gt;&lt;li class="L0"&gt;&lt;span class="pln"&gt;on&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L1"&gt;&lt;span class="pln"&gt;&amp;nbsp; issues&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L2"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; types&lt;/span&gt;&lt;span class="pun"&gt;:&lt;/span&gt;&lt;/li&gt;&lt;li class="L3"&gt;&lt;span class="pln"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span class="pun"&gt;-&lt;/span&gt;&lt;span class="pln"&gt; opened&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;p&gt;Specifies the issues event and filters it to only trigger the workflow when an issue is opened (types: opened).&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows"&gt;https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/using-workflows/triggering-a-workflow"&gt;https://docs.github.com/en/actions/using-workflows/triggering-a-workflow&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="52-. Your organization requires a runner to execute multiple GitHub Actions workflows that include CPU-intensive tasks and high-memory processes that access sensitive internal resources. Which runner type best aligns with these requirements?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>standard GitHub-hosted runner</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>self-hosted runner with dedicated hardware</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>self-hosted runner on a virtual machine within your cloud infrastructure</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>GitHub-hosted large runner</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;For demanding workloads, security concerns, and complete control, a self-hosted runner with dedicated hardware provides the optimal solution. Self-hosted runners offer more control of hardware, operating system, and software tools than GitHub-hosted runners provide. With self-hosted runners, you can create custom hardware configurations that meet your needs with processing power or memory to run larger jobs, install software available on your local network, and choose an operating system not offered by GitHub-hosted runners. Self-hosted runners can be physical, virtual, in a container, on-premises, or a cloud.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Standard GitHub-hosted runners offer limited resources and aren't ideal for heavy workloads. Additionally, their dynamic IP addresses complicate securing access to internal resources.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;While a GitHub-hosted large runner is a better fit for resource-intensive tasks, their static IP addresses still require careful allowlist configuration for security.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;While offering more control than standard hosted runners, virtual machines still share resources with other processes on the same server, potentially impacting performance and security.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners"&gt;https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="53-. Which variable would you set to true in order to enable step debug logging?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>ACTIONS_JOB_DEBUG </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>ACTIONS_WORKFLOW_DEBUG </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>ACTIONS_STEP_DEBUG </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>ACTIONS_RUNNER_DEBUG </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;To enable step debug logging, set the following secret or variable in the repository that contains the workflow: &lt;code&gt;ACTIONS_STEP_DEBUG &lt;/code&gt;to &lt;code&gt;true&lt;/code&gt;. If both the secret and variable are set, the value of the secret takes precedence over the variable.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;******************&lt;br&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;There is no variable named &lt;code&gt;ACTIONS_WORKFLOW_DEBUG&lt;/code&gt; used to enable step debug logging. While debug logging can be enabled for the entire workflow, it is achieved using the&lt;code&gt; ACTIONS_STEP_DEBUG&lt;/code&gt; variable rather than &lt;code&gt;ACTIONS_WORKFLOW_DEBUG&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;There is no variable named &lt;code&gt;ACTIONS_JOB_DEBUG&lt;/code&gt; used to enable step debug logging. While debug logging can be enabled for the entire job, it is achieved using the &lt;code&gt;ACTIONS_STEP_DEBUG&lt;/code&gt; variable rather than &lt;code&gt;ACTIONS_JOB_DEBUG.&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The &lt;code&gt;ACTIONS_RUNNER_DEBUG&lt;/code&gt; variable is generally used for debugging issues related to the GitHub Actions runner environment itself, such as troubleshooting connectivity problems, examining runner setup, or diagnosing runner-specific errors. It's more focused on the runner instance's behavior and configurations rather than enabling step-level debug logging within workflows.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/enabling-debug-logging"&gt;https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/enabling-debug-logging&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="54-. Your development team is responsible for deploying your organization's flagship application, which requires custom software tools for deployment. What type of runner would be ideal for this environment?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="true">
+        <text>self-hosted runners on virtual machines managed by the organization</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>cloud-hosted runners from a third-party provider</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>self-hosted runners on physical servers maintained by the organization</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>GitHub-hosted runners provided by GitHub</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;For deploying the organization's flagship application, which requires custom software tools, self-hosted runners on virtual machines managed by the organization would be ideal. This setup allows the development team to have complete control over the runner environment, including the installation and management of custom software tools necessary for deployment. Additionally, self-hosted runners provide flexibility and scalability, ensuring the deployment process aligns perfectly with the organization's requirements and workflows.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;While GitHub-hosted runners are convenient and managed by GitHub, they may lack the ability to install custom software tools required for deploying the organization's flagship application.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Self-hosted runners on physical servers maintained by the organization may offer control but are less flexible and scalable compared to virtual machines.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Cloud-hosted runners from a third-party provider might be suitable but may not provide the same level of control and customization required for deploying the flagship application.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners"&gt;https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="55-. What are actions in the context of GitHub development workflows?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>integrated plugins for popular IDEs like Visual Studio Code</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>automated scripts that execute code without user intervention</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>predefined workflows provided by GitHub for common development tasks</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>individual tasks that can be customized to perform specific actions within development workflows</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;Actions are individual tasks that you can use to customize your development workflows. You can create your own actions by writing custom code that interacts with your repository to perform custom tasks, or by using actions the GitHub community shares.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;actions are not predefined workflows provided by GitHub, but rather customizable tasks.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;while actions can automate tasks, they are not limited to executing code without user intervention.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;GitHub actions are not integrated plugins for specific IDEs, but rather standalone tasks within GitHub repositories.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions"&gt;https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="56-. Sam would like to trigger a workflow when a push is made to any branch in the repository, or somebody creates a tag. How can Sam specify these events within the GitHub workflow configuration?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>on: {push, create} </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>on: [push, tag] </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>on: {push, tag} </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>on: [push, create] </text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;A workflow with the following &lt;code&gt;on: [push, create]&lt;/code&gt; value will run when a push is made to any branch in the repository or when someone creates a branch or tag.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;******************&lt;br&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;on: {push, create}&lt;/code&gt; - This syntax is incorrect because it uses curly braces {} instead of square brackets []. In YAML syntax, square brackets are used for lists, while curly braces are used for mappings.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;on: [push, tag]&lt;/code&gt; - This syntax is incorrect because &lt;code&gt;tag&lt;/code&gt; is not a valid event but rather a filter for other events such as &lt;code&gt;create&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;code&gt;on: {push, tag}&lt;/code&gt; - This syntax is incorrect because it uses curly braces {} instead of square brackets []. In YAML syntax, square brackets are used for lists, while curly braces are used for mappings. In addition, &lt;code&gt;tag&lt;/code&gt; is not a valid trigger event.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/using-workflows/triggering-a-workflow#using-multiple-events"&gt;https://docs.github.com/en/actions/using-workflows/triggering-a-workflow#using-multiple-events&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#create"&gt;https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#create&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="57-. You are trying to print a debug message using workflow commands but cannot locate it in the debug logs. What could be the issue?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="true">
+        <text>debug messages are not displayed in the logs by default</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>a relevant event did not trigger the workflow run</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>the debug message was printed in the wrong step</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>the debug message was printed with incorrect syntax</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;In GitHub Actions, debug messages printed using workflow commands are not displayed in the logs by default. They are only shown when debug logging is explicitly enabled for the workflow run. If debug logging is not enabled, the debug messages will not appear in the logs, even though they were printed successfully.&lt;/p&gt;&lt;p&gt;You must create a secret named &lt;code&gt;ACTIONS_STEP_DEBUG&lt;/code&gt; with the value &lt;code&gt;true&lt;/code&gt; to see the debug messages set by this command in the log.&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;The location of the debug message within the workflow steps does not affect its visibility in the logs if debug logging is enabled.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The triggering event of the workflow run does not affect the visibility of debug messages in the logs.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;If the debug message were printed with incorrect syntax, it would likely result in a syntax error rather than the message not appearing in the logs.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions"&gt;https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/enabling-debug-logging"&gt;https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/enabling-debug-logging&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="58-. You were provided a secret used by your production application, so you create a secret in the repository where the application code is managed. After creating the secret, users are complaining they can't access the secret when deploying from their own repository. What can you do to fix this?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>store the secret using Base64 encoding so the secret is unreadable</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>add the other repositories to the policy to allow them to use the secret</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>change the policy to permit anyone to access the secret</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>create the secret at the organization level and configure a policy that permits access to use the secret in the required repositories</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;Secrets stored in a repository can only be accessed from within that repository, not other repositories. To create secrets or variables on GitHub for a personal account repository, you must be the repository owner. Lastly, to create secrets or variables for a personal account repository or an organization repository through the REST API, you must have collaborator access.&lt;/p&gt;&lt;p&gt;********************&lt;/p&gt;&lt;p&gt;&lt;strong&gt;WRONG&amp;nbsp;ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;you cannot add the other repositories to the policy for a secret created directly in a repository. You could need to create the secret at the organization level&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Storing the secret using Base64 encoding would not change the outcome. Also, Base64 is NOT encryption and does not protect the data that is encoded&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;you cannot modify the policy to allow others to use it for a secret created directly in a repository. You could need to create the secret at the organization level &lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository"&gt;https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="59-. How does a GitHub Actions workflow contribute to the deployment process to a cloud provider?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="true">
+        <text>by defining a series of actions in the workflow YAML file for deployment</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>by directly deploying releases without any configuration</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>by triggering deployment based on the repository’s creation file</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>by automatically generating API keys for secure deployment</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;GitHub Actions workflows are configured by specifying a sequence of actions in the YAML file, including those for deployment&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;The deployment process is typically triggered by specific events, not the creation date&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;The generation of API keys is not an inherent function of GitHub Actions&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Configuration in the workflow YAML file is necessary for a controlled deployment process&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/deployment/deploying-to-your-cloud-provider/deploying-to-amazon-elastic-container-service"&gt;https://docs.github.com/en/actions/deployment/deploying-to-your-cloud-provider/deploying-to-amazon-elastic-container-service&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/deployment/deploying-to-your-cloud-provider/deploying-to-azure/deploying-to-azure-kubernetes-service"&gt;https://docs.github.com/en/actions/deployment/deploying-to-your-cloud-provider/deploying-to-azure/deploying-to-azure-kubernetes-service&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/deployment/deploying-to-your-cloud-provider/deploying-to-google-kubernetes-engine"&gt;https://docs.github.com/en/actions/deployment/deploying-to-your-cloud-provider/deploying-to-google-kubernetes-engine&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+  <question title="60-. When are service containers created and destroyed for each configured service?" isCheck="false" imagePath="">
+    <responses>
+      <response isValid="false">
+        <text>created at the start of the workflow and destroyed at the end</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="true">
+        <text>created for each job and destroyed when the job is completed</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>created on-demand whenever a specific step requires the service container</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+      <response isValid="false">
+        <text>created at the start of the repository and destroyed when the repository is archived</text>
+        <explain>&lt;![CDATA[
+
+]]&gt;</explain>
+      </response>
+    </responses>
+    <explain>&lt;![CDATA[
+&lt;p&gt;Service containers are configured for each job in a workflow, and GitHub creates a fresh Docker container for each service configured in the workflow. These service containers are then destroyed when the job completes&lt;/p&gt;&lt;p&gt;********************&lt;br&gt;&lt;strong&gt;WRONG ANSWERS:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Service containers are associated with jobs, not the entire workflow&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Service containers are scoped to jobs within a workflow, not the entire repository&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Service containers are configured for the entire job and not created on-demand during the job&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://docs.github.com/en/actions/using-containerized-services/about-service-containers"&gt;https://docs.github.com/en/actions/using-containerized-services/about-service-containers&lt;/a&gt;&lt;/p&gt;
+]]&gt;</explain>
+  </question>
+</questions>
